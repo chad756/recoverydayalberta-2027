@@ -1,0 +1,25 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Environment files: NEVER commit these (they hold your keys).
+.env
+.env.*
+!.env.example
+
+# Supabase local files (Phase 2+)
+supabase/.temp/
+supabase/.branches/
+
+# Backups and exports must never go in this public repo
+*.dump
+*.sql.gz
+backups/
+exports/
+
+# Editor / OS clutter
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+*.log

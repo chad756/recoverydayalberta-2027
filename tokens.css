@@ -1,0 +1,28 @@
+/* =============================================================================
+   Design tokens: colours, fonts, spacing. Change the look of the whole site here.
+   2027 palette: Heritage Brick, Autumn Gold, Stage Black. Text colours pass WCAG AA contrast.
+   ========================================================================== */
+:root {
+  /* Brand colours (2027) */
+  --brick: #9e3b2c;        /* Heritage Brick - accents, eyebrows, check marks (7.2:1 on paper) */
+  --gold: #e3a93b;         /* Autumn Gold - highlights on dark, primary buttons (8.3:1 on Stage Black) */
+  --stage-black: #1e1f24;  /* Stage Black - main text and dark backgrounds */
+
+  --ink: var(--stage-black);
+  --charcoal: #2a2b31;
+  --paper: #f4f1e8;        /* page background */
+  --white: #ffffff;
+  --muted: #55575d;        /* secondary text on paper/white: 6.4:1 */
+  --muted-on-dark: #c2c3c7;
+  --border: rgba(30, 31, 36, 0.14);
+  --ok: #1d6b35;
+  --error: #a3241b;
+
+  --font: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius: 20px;
+  --radius-sm: 10px;
+  --shadow: 0 24px 60px rgba(30, 31, 36, 0.12);
+  --container: 1180px;
+  --nav-height: 72px;
+  --focus: 3px solid #1a5fb4;
+}
