@@ -1,0 +1,130 @@
+/* Page sections: hero, schedules, festivals, partner, volunteer, about. */
+
+/* ---- Hero ---- */
+.hero { background: var(--ink); color: var(--white); overflow: hidden; }
+.hero__inner { display: grid; gap: 40px; padding-block: clamp(40px, 7vw, 88px); align-items: center; }
+.hero .kicker { color: var(--gold); }
+.hero h1 span { color: var(--gold); }
+.hero__lede { font-size: clamp(1.1rem, 2vw, 1.3rem); color: #e6e6e8; max-width: 34ch; }
+.hero__tagline { margin-top: 24px; font-size: 0.9rem; color: var(--muted-on-dark); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__art { max-width: 460px; justify-self: center; width: 100%; }
+.hero__art img { box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
+
+.date-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 28px; }
+.date-list a {
+  display: flex; flex-direction: column; min-width: 112px; padding: 12px 16px; border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.25); text-decoration: none; line-height: 1.2;
+}
+.date-list a:hover { border-color: var(--gold); }
+.date-list strong { color: var(--gold); font-size: 1.05rem; font-weight: 900; text-transform: uppercase; }
+.date-list span { font-size: 0.9rem; color: #e6e6e8; }
+
+@media (min-width: 900px) {
+  .hero__inner { grid-template-columns: 1.15fr 0.85fr; }
+}
+
+.strip {
+  list-style: none; margin: 0; padding: 14px 20px; background: var(--gold); color: var(--ink);
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px;
+  font-weight: 900; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem;
+}
+
+/* ---- Schedules ---- */
+.schedule-grid { display: grid; gap: 20px; }
+@media (min-width: 900px) { .schedule-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.schedule {
+  --accent: var(--gold);
+  display: flex; flex-direction: column; background: var(--white); border-radius: var(--radius);
+  border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden;
+}
+.schedule--calgary { --accent: var(--brick); }
+.schedule--red-deer { --accent: #c9c3b6; }
+.schedule__header { background: var(--ink); color: var(--white); padding: 22px 24px; border-bottom: 6px solid var(--accent); }
+.schedule__header h2, .schedule__header h3 { margin: 4px 0; font-size: 1.8rem; }
+.schedule__date { margin: 0; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+.schedule__venue { margin: 0; color: var(--muted-on-dark); font-size: 0.95rem; }
+.schedule__list { list-style: none; margin: 0; padding: 8px 24px; flex: 1; }
+.schedule__list li {
+  display: grid; grid-template-columns: 88px 1fr; gap: 12px; padding: 14px 0;
+  border-bottom: 1px solid var(--border); align-items: baseline;
+}
+.schedule__list li:last-child { border-bottom: 0; }
+.schedule__list time, .schedule__list .time { font-weight: 800; font-variant-numeric: tabular-nums; color: var(--muted); }
+.schedule__title { font-weight: 600; }
+.schedule__list .is-featured .schedule__title { font-weight: 900; font-size: 1.15rem; }
+.schedule__list .is-featured time, .schedule__list .is-featured .time { color: var(--ink); }
+.schedule__list .is-end .schedule__title { color: var(--muted); font-style: italic; }
+.schedule__footer { padding: 16px 24px 22px; border-top: 1px solid var(--border); font-weight: 700; }
+
+/* ---- Festivals (city cards) ---- */
+.city {
+  display: grid; background: var(--white); border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 28px;
+}
+.city__cover img { width: 100%; aspect-ratio: 1600 / 837; object-fit: cover; }
+.city__details { padding: clamp(22px, 4vw, 40px); }
+.city__info { position: relative; }
+.city__info::before { content: attr(data-number); position: absolute; top: -8px; right: 0; line-height: 1; margin: 0; font-size: 3rem; font-weight: 900; color: rgba(30, 31, 36, 0.08); }
+.city__date { margin: 0 0 6px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--brick); }
+.city h3 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 6px; }
+.city__venue { color: var(--muted); margin-bottom: 8px; }
+.city__lineup { font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; }
+.city__lineup span { font-weight: 600; color: var(--muted); font-size: 0.95rem; margin-right: 4px; }
+.city__supporting { color: var(--muted); }
+.city__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: 20px 0; }
+.city__more { display: grid; gap: 20px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.97rem; }
+.city__more p { color: var(--muted); }
+
+@media (min-width: 1000px) {
+  .city__details { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .city__more { padding-top: 0; border-top: 0; padding-left: 40px; border-left: 1px solid var(--border); }
+  .city__actions { margin-bottom: 0; }
+}
+
+/* ---- Partner ---- */
+.section--partner { background: var(--white); }
+.partner-groups { display: grid; gap: 24px; }
+@media (min-width: 900px) { .partner-groups { grid-template-columns: 0.8fr 1.2fr; align-items: start; } }
+.price-group { border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); border: 2px solid var(--ink); }
+.price-group h2, .price-group h3 { font-size: 1.6rem; }
+.price-group--sponsor { background: var(--ink); color: var(--white); }
+.price-group--sponsor .price-list li { border-color: rgba(255, 255, 255, 0.2); }
+.price-group--sponsor .price-list__price { color: var(--gold); }
+.price-group--booth { background: var(--paper); }
+.price-group__sub { font-weight: 600; font-size: 0.75em; color: var(--muted); white-space: nowrap; }
+.price-group__subhead { margin-top: 24px; font-size: 1.1rem; }
+.price-list { list-style: none; margin: 0; padding: 0; }
+.price-list li {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.price-list__name { font-weight: 600; }
+.price-list__price { font-weight: 900; font-size: 1.15rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.price-note { margin: 14px 0 0; font-weight: 700; }
+.price-footnote { margin-top: 20px; color: var(--muted); font-size: 0.95rem; }
+
+/* ---- Volunteer ---- */
+.volunteer { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 900px) { .volunteer { grid-template-columns: 0.8fr 1.2fr; } }
+.volunteer__badge { background: var(--ink); color: var(--white); border-radius: var(--radius); padding: 32px; }
+.volunteer__badge-kicker { margin: 0 0 8px; color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
+.volunteer__badge-title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 900; line-height: 1.05; margin-bottom: 20px; }
+.volunteer__dates { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; color: #e6e6e8; }
+.volunteer__roles-title { font-size: 1.4rem; margin-top: 32px; }
+.volunteer__copy .notice { margin-block: 20px; }
+
+/* ---- About ---- */
+.section--about { background: var(--ink); color: var(--white); }
+.section--about .eyebrow { color: var(--gold); }
+.section--about .section-heading p { color: #e6e6e8; }
+.values { display: grid; gap: 20px; }
+@media (min-width: 800px) { .values { grid-template-columns: repeat(3, 1fr); } }
+.values article { border: 1px solid rgba(255, 255, 255, 0.18); border-radius: var(--radius); padding: 28px; }
+.values p { color: var(--muted-on-dark); }
+.values .values__number { color: var(--gold); font-weight: 900; font-size: 1.1rem; }
+
+/* ---- Simple pages (placeholders) ---- */
+.section--simple { min-height: 50vh; }
+.section--simple .notice { margin-block: 20px; }
