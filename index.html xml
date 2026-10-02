@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8">
+    <!--@meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovery Day Alberta {{YEAR}} | Edmonton, Calgary &amp; Red Deer</title>
+    <meta name="description" content="Free Recovery Day Alberta festivals in Edmonton, Calgary and Red Deer. Live music, family activities and recovery resources.">
+    <meta name="theme-color" content="#1e1f24">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <!--@header-->
+    <main id="main-content" tabindex="-1">
+      <!--@hero-->
+      <!--@schedules-->
+      <!--@festivals-->
+      <!--@partner-->
+      <!--@volunteer-->
+      <!--@about-->
+    </main>
+    <!--@footer-->
+  </body>
+</html>
