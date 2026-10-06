@@ -1,0 +1,37 @@
+/* =============================================================================
+   Design tokens: colours, fonts, spacing. Change the look of the whole site here.
+   2027 palette - built on the 2027 colour forecasts:
+     Luminous Blue (WGSN x Coloro Colour of the Year 2027), Maize (radiant,
+     optimistic yellow - an AW27 key colour), Peaceful Lilac (soft modern
+     tint) and Midnight (deep blue-black instead of plain black), on a soft
+     "cloud" white.
+   Contrast rules (so text stays readable):
+     - Luminous Blue text: only on white, cloud or lilac (5:1+). Never on Midnight.
+     - Maize text: only on Midnight/dark (10.6:1). Never on white or cloud.
+     - Midnight text on Maize and white text on Luminous Blue are both fine.
+   ========================================================================== */
+:root {
+  /* Brand colours (2027) */
+  --blue: #2e4fe0;         /* Luminous Blue - accents, eyebrows, links, badges (6.3:1 on white, 5.8:1 on cloud) */
+  --maize: #f4c542;        /* Maize - highlights on dark, primary buttons, strips (10.6:1 with Midnight) */
+  --midnight: #131a33;     /* Midnight - main text and dark backgrounds */
+  --lilac: #e7e1f7;        /* Peaceful Lilac - soft tinted boxes and borders */
+
+  --ink: var(--midnight);
+  --charcoal: #222b4d;     /* lighter midnight for dark cards */
+  --paper: #f6f5f0;        /* page background (soft cloud white) */
+  --white: #ffffff;
+  --muted: #545a70;        /* secondary text on paper/white: 6.3:1 */
+  --muted-on-dark: #c3c8d9; /* 10.3:1 on Midnight */
+  --border: rgba(19, 26, 51, 0.14);
+  --ok: #1d6b35;
+  --error: #a3241b;
+
+  --font: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radius: 20px;
+  --radius-sm: 10px;
+  --shadow: 0 24px 60px rgba(19, 26, 51, 0.12);
+  --container: 1180px;
+  --nav-height: 72px;
+  --focus: 3px solid #1a5fb4;
+}

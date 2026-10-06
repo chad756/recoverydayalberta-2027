@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8">
+    <!--@meta noindex-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>My volunteer shifts | Recovery Day Alberta {{YEAR}}</title>
+    <meta name="description" content="Confirm or decline your Recovery Day volunteer shifts.">
+    <meta name="theme-color" content="#131a33">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script type="module" src="/src/pages/volunteer-shifts.js"></script>
+  </head>
+  <body>
+    <!--@header current="volunteer"-->
+    <main id="main-content" tabindex="-1" class="app-main">
+      <section class="section section--simple" aria-labelledby="page-title">
+        <div class="container container--narrow">
+          <p class="eyebrow">Volunteers</p>
+          <h1 id="page-title">My volunteer shifts</h1>
+          <div id="shifts" aria-live="polite"><p>Loading your shifts…</p></div>
+        </div>
+      </section>
+    </main>
+    <!--@footer-->
+  </body>
+</html>

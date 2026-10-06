@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" role="img" aria-label="Sample festival site map">
+  <rect width="1000" height="600" fill="#f6f5f0"/>
+  <rect x="0" y="250" width="1000" height="100" fill="#cfc9ba"/>
+  <text x="500" y="308" font-family="Arial" font-size="22" text-anchor="middle" fill="#131a33">4th Street SW (closed to traffic)</text>
+  <rect x="40" y="40" width="200" height="160" fill="#2e4fe0" opacity="0.85"/>
+  <text x="140" y="128" font-family="Arial" font-size="24" text-anchor="middle" fill="#fff">MAIN STAGE</text>
+  <rect x="780" y="420" width="180" height="140" fill="#f4c542"/>
+  <text x="870" y="496" font-family="Arial" font-size="22" text-anchor="middle" fill="#131a33">KIDS ZONE</text>
+  <rect x="40" y="420" width="180" height="140" fill="#55575d"/>
+  <text x="130" y="496" font-family="Arial" font-size="20" text-anchor="middle" fill="#fff">FOOD TRUCKS</text>
+  <text x="500" y="590" font-family="Arial" font-size="16" text-anchor="middle" fill="#55575d">Sample map for the demo – upload the real map in Admin → Booths</text>
+</svg>
