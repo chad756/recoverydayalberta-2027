@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="UTF-8">
+    <!--@meta noindex-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event admin | Recovery Day Alberta</title>
+    <meta name="description" content="Recovery Day Alberta event admin portal.">
+    <meta name="theme-color" content="#131a33">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script type="module" src="/src/pages/admin.js"></script>
+  </head>
+  <body class="is-admin">
+    <!--@header-->
+    <main id="main-content" tabindex="-1" class="app-main">
+      <div class="app-shell app-shell--wide">
+        <nav class="app-nav" aria-label="Admin">
+          <p class="app-nav__who" id="who">Loading…</p>
+          <ul id="admin-nav"></ul>
+          <button class="button button--outline button--small" type="button" id="sign-out">Log out</button>
+        </nav>
+        <section class="app-view" id="view" aria-live="polite" tabindex="-1">
+          <p>Loading the admin portal…</p>
+        </section>
+      </div>
+    </main>
+    <!--@footer-->
+  </body>
+</html>
