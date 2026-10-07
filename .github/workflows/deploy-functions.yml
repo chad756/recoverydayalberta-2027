@@ -1,0 +1,58 @@
+# =============================================================================
+# Put the Supabase Edge Functions online (no computer setup needed).
+# =============================================================================
+# Runs on GitHub's servers, so nothing has to be installed on a work computer.
+# Run it by hand: Actions tab -> "Deploy Supabase functions" -> Run workflow.
+# It also runs by itself when files in supabase/functions change.
+#
+# Secrets used (Settings -> Secrets and variables -> Actions -> Secrets):
+#   SUPABASE_ACCESS_TOKEN  Supabase -> your account (top right) -> Access Tokens
+#   SUPABASE_PROJECT_ID    the letters in your Project URL (abcdefghijkl)
+#
+# The functions' own secrets (RESEND_API_KEY, CRON_SECRET ...) are set in
+# Supabase -> Edge Functions -> Secrets, not here.
+# =============================================================================
+name: Deploy Supabase functions
+
+on:
+  push:
+    branches: [main]
+    paths: ['supabase/functions/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v6
+
+      - name: Install the Supabase tool
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Check the two secrets are set
+        run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ] || [ -z "$PROJECT_ID" ]; then
+            echo "::error::Add SUPABASE_ACCESS_TOKEN and SUPABASE_PROJECT_ID in Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+
+      - name: Create a basic Supabase settings file if there isn't one
+        run: |
+          if [ ! -f supabase/config.toml ]; then
+            printf 'project_id = "recoverydayalberta"\n' > supabase/config.toml
+          fi
+
+      - name: Deploy the functions used by signed-in people
+        run: supabase functions deploy mailer document-pdf --project-ref "$PROJECT_ID" --use-api
+
+      - name: Deploy the functions called by other systems (they check their own secret)
+        run: supabase functions deploy payment-notify inbound-payment-email daily-jobs --project-ref "$PROJECT_ID" --no-verify-jwt --use-api
